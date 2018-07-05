@@ -1,0 +1,138 @@
+<fieldset id="blok2" class="hidden">
+  <span class="blok-titel">Opleiding leerling</span>
+  <div class="custom-select">
+    <span class="input-icon" id="opleiding-icon"><i class="fas fa-graduation-cap"></i></span>
+    <select name="opleiding-leerling">
+      <option>Opleiding</option>
+      <option value="VMBO">VMBO</option>
+      <option value="HAVO">HAVO</option>
+      <option value="VWO">VWO</option>
+      <option value="MBO">MBO</option>
+      <option value="Anders">Anders</option>
+    </select>
+  </div>
+  <div id="opleiding-empty" class="opleiding-optie visible">
+    <p><img src="assets/images/opleiding-icon.svg" alt="Opleiding icon" /><p>
+    <p>Er is nog geen keuze gemaakt.</p>
+  </div>
+  <div id="opleiding-1-input" class="opleiding-optie">
+    <div class="checkboxes">
+      <label class="checkbox">Niveau BB
+        <input type="radio" name="vmbo-niveau[]" value="vmbo-bb" checked="checked">
+        <span class="checkmark"></span>
+      </label>
+      <label class="checkbox">Niveau KB
+        <input type="radio" name="vmbo-niveau[]" value="vmbo-kb">
+        <span class="checkmark"></span>
+      </label>
+      <label class="checkbox">Niveau GL
+        <input type="radio" name="vmbo-niveau[]" value="vmbo-gl">
+        <span class="checkmark"></span>
+      </label>
+      <label class="checkbox">Niveau TL
+        <input type="radio" name="vmbo-niveau[]" value="vmbo-tl">
+        <span class="checkmark"></span>
+      </label>
+      <label class="checkbox">Niveau LWT
+        <input type="radio" name="vmbo-niveau[]" value="vmbo-lwt">
+        <span class="checkmark"></span>
+      </label>
+      <label class="checkbox">Niveau LWOO
+        <input type="radio" name="vmbo-niveau[]" value="vmbo-lwoo">
+        <span class="checkmark"></span>
+      </label>
+    </div>
+    <div class="checkboxes">
+      <label class="checkbox">Economie
+        <input type="radio" name="vmbo-sector[]" value="vmbo-economie" checked="checked">
+        <span class="checkmark"></span>
+      </label>
+      <label class="checkbox">Landbouw
+        <input type="radio" name="vmbo-sector[]" value="vmbo-landbouw">
+        <span class="checkmark"></span>
+      </label>
+      <label class="checkbox">Techniek
+        <input type="radio" name="vmbo-sector[]" value="vmbo-techniek">
+        <span class="checkmark"></span>
+      </label>
+      <label class="checkbox">Zorg/ Welzijn
+        <input type="radio" name="vmbo-sector[]" value="vmbo-zorg_welzijn">
+        <span class="checkmark"></span>
+      </label>
+    </div>
+    <div class="checkboxes">
+      <div class="checkboxes-helft">
+        <span class="tussen-titel">MVI gedaan?</span>
+      </div>
+      <div class="checkboxes-helft">
+        <label class="checkbox">Ja
+          <input type="radio" name="vmbo-mvi[]" value="vmbo-mvi_ja">
+          <span class="checkmark"></span>
+        </label>
+        <label class="checkbox">Nee
+          <input type="radio" name="vmbo-mvi[]" value="vmbo-mvi_nee" checked="checked">
+          <span class="checkmark"></span>
+        </label>
+      </div>
+    </div>
+    <p><span class="input-icon"><i class="fas fa-calendar-alt"></i></span><input type="text" name="vmbo-diploma" placeholder="Diploma behaald/ te behalen op" autocomplete="off" /></p>
+  </div>
+  <div id="opleiding-2-input" class="opleiding-optie">
+    <p><span class="input-icon"><i class="fas fa-calendar-alt"></i></span><input type="text" name="havo-diploma" placeholder="Diploma behaald/ te behalen op" autocomplete="off" /></p>
+    <p><img src="assets/images/overgangsbewijs-icon.svg" class="icon" alt="Opleiding icon" /><p>
+    <span class="tussen-titel mb-15">Overgangsbewijs</span>
+    <p><span class="input-icon"><i class="fas fa-calendar-alt"></i></span><input type="number" name="havo-overgang_van" placeholder="Van leerjaar" autocomplete="off" /></p>
+    <p><span class="input-icon"><i class="fas fa-calendar-alt"></i></span><input type="number" name="havo-overgang_naar" placeholder="Naar leerjaar" autocomplete="off" /></p>
+  </div>
+  <div id="opleiding-3-input" class="opleiding-optie">
+    <p><span class="input-icon"><i class="fas fa-calendar-alt"></i></span><input type="text" name="vwo-diploma" placeholder="Diploma behaald/ te behalen op" autocomplete="off" /></p>
+    <p><img src="assets/images/overgangsbewijs-icon.svg" class="icon" alt="Opleiding icon" /><p>
+    <span class="tussen-titel mb-15">Overgangsbewijs</span>
+    <p><span class="input-icon"><i class="fas fa-calendar-alt"></i></span><input type="number" name="vwo-overgang_van" placeholder="Van leerjaar" autocomplete="off" /></p>
+    <p><span class="input-icon"><i class="fas fa-calendar-alt"></i></span><input type="number" name="vwo-overgang_naar" placeholder="Naar leerjaar" autocomplete="off" /></p>
+  </div>
+  <div id="opleiding-4-input" class="opleiding-optie">
+    <div class="checkboxes">
+      <label class="checkbox">Niveau 1
+        <input type="radio" name="mbo-niveau[]" value="mbo-1" checked="checked">
+        <span class="checkmark"></span>
+      </label>
+      <label class="checkbox">Niveau 2
+        <input type="radio" name="mbo-niveau[]" value="mbo-2">
+        <span class="checkmark"></span>
+      </label>
+      <label class="checkbox">Niveau 3
+        <input type="radio" name="mbo-niveau[]" value="mbo-3">
+        <span class="checkmark"></span>
+      </label>
+      <label class="checkbox">Niveau 4
+        <input type="radio" name="mbo-niveau[]" value="mbo-4">
+        <span class="checkmark"></span>
+      </label>
+    </div>
+    <div class="checkboxes">
+      <div class="checkboxes-helft">
+        <span class="tussen-titel">Leerweg</span>
+      </div>
+      <div class="checkboxes-helft">
+        <label class="checkbox">BOL
+          <input type="radio" name="mbo-leerweg[]" value="mbo-bol" checked="checked">
+          <span class="checkmark"></span>
+        </label>
+        <label class="checkbox">BBL
+          <input type="radio" name="mbo-leerweg[]" value="mbo-bbl">
+          <span class="checkmark"></span>
+        </label>
+      </div>
+    </div>
+  </div>
+  <div id="opleiding-5-input" class="opleiding-optie">
+    <p><img src="assets/images/opleiding-icon.svg" class="icon" alt="Opleiding icon" /><p>
+    <span class="tussen-titel mb-15">Definieer huidige opleiding</span>
+    <p><span class="input-icon"><i class="fas fa-graduation-cap"></i></span><input type="text" name="andere-opleiding" placeholder="Opleiding" autocomplete="off" /></p>
+  </div>
+  <div class="buttons">
+    <button type="button" class="button vorige" tabindex="-1"><i class="fas fa-chevron-left"></i>&nbsp; Vorige</button>
+    <button type="button" class="button volgende" tabindex="-1">Volgende&nbsp; <i class="fas fa-chevron-right"></i></button>
+  </div>
+</fieldset>

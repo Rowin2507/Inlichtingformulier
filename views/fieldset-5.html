@@ -1,0 +1,34 @@
+<fieldset id="blok5" class="hidden">
+  <span class="blok-titel">Decaan/ mentor</span>
+  <p><span class="input-icon"><i class="far fa-user"></i></span><input type="text" name="naam-decaan_mentor" placeholder="Naam" autocomplete="off" required /></p>
+  <div class="checkboxes">
+    <div class="checkboxes-helft checkbox-decaan_mentor">
+      <span class="tussen-titel">Geslacht</span>
+    </div>
+    <div class="checkboxes-helft checkbox-decaan_mentor">
+      <label class="checkbox">Man
+        <input type="radio" name="geslacht-decaan_mentor[]" value="geslacht-decaan_mentor-man" checked="checked">
+        <span class="checkmark"></span>
+      </label>
+      <label class="checkbox">Vrouw
+        <input type="radio" name="geslacht-decaan_mentor[]" value="geslacht-decaan_mentor-vrouw">
+        <span class="checkmark"></span>
+      </label>
+    </div>
+  </div>
+  <p><span class="input-icon"><i class="fas fa-briefcase"></i></span><input type="text" name="functie-decaan_mentor" placeholder="Functie" autocomplete="off" required /></p>
+  <p><span class="input-icon"><i class="fas fa-envelope"></i></span><input type="email" name="email-decaan_mentor" placeholder="Mailadres" autocomplete="off" required /></p>
+  <p><span class="input-icon"><i class="fas fa-graduation-cap"></i></span><input type="text" name="school-decaan_mentor" placeholder="School" autocomplete="off" required /></p>
+  <p class="show-map"><span class="input-icon"><i class="fas fa-map-marker-alt"></i></span><span class="input-button" name="plaats-decaan_mentor">Plaats</span></p>
+  <p><span class="input-icon"><i class="fas fa-mobile-alt"></i></span><input type="text" name="telefoon-decaan_mentor" placeholder="Telefoon" autocomplete="off" required /></p>
+
+  <div id="map"></div>
+  <input id="map-zoeken" class="controls" type="text" name="plaats-school-map" placeholder="Schoollocatie zoeken">
+  <button class="hide-map">✕</button>
+  <button class="submit-map">Dit adres gebruiken&nbsp; <i class="fas fa-map-marker-alt"></i></button>
+
+  <div class="buttons">
+    <button type="button" class="button vorige" tabindex="-1"><i class="fas fa-chevron-left"></i>&nbsp; Vorige</button>
+    <button type="submit" name="submit" class="button submit">Afronden&nbsp; <i class="fas fa-check"></i></button>
+  </div>
+</fieldset>

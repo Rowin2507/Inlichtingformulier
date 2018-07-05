@@ -1,0 +1,955 @@
+
+// VARIABELEN ------------------------------------------------------------------
+$sans: sans-serif;
+$quicksand: 'Quicksand', sans-serif;
+
+$color-roze: #E52884;
+$color-roze-hover: #C3247B;
+$color-wit: #fff;
+$color-lichtgrijs: #ddd;
+$color-grijs: #353535;
+$color-donkergrijs: #191919;
+$color-zwartgrijs: #111111;
+$color-zwart: #000;
+
+@mixin transition($duration) {
+  -webkit-transition: $duration;
+  -moz-transition: $duration;
+  -ms-transition: $duration;
+  -o-transition: $duration;
+  transition: $duration;
+}
+@mixin transform($transforms) {
+  -webkit-transform: $transforms;
+  -moz-transform: $transforms;
+  -ms-transform: $transforms;
+  -o-transform: $transforms;
+  transform: $transforms;
+}
+@mixin filter($filtering) {
+  -webkit-filter: $filtering;
+  -moz-filter: $filtering;
+  -ms-filter: $filtering;
+  -o-filter: $filtering;
+  filter: $filtering;
+}
+
+
+// STYLING ---------------------------------------------------------------------
+
+.mb-15 {margin-bottom: 15px;}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: $quicksand;
+  font-size: 16px;
+  font-weight: 400;
+  color: $color-zwart;
+  opacity: 0;
+  @include transition (.4s);
+
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+body.loaded {opacity: 1;}
+
+
+// MAIN
+.main-bg {
+  height: 100vh;
+  background: url("../images/school-bg.jpg") fixed no-repeat;
+  background-size: cover;
+  background-position: center;
+  @include transition (.3s);
+}
+.main-blurred {
+  width: 400px;
+  height: 550px;
+  background: inherit;
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  margin-left: -200px;
+  margin-top: -100%;
+  border-radius: 8px;
+  box-shadow: 0px 0px 14px rgba(0,0,0,0.4);
+  -webkit-transition: all 500ms cubic-bezier(0.75, 0.885, 0.22, 1.10);
+  transition: all 500ms cubic-bezier(0.75, 0.885, 0.22, 1.10);
+}
+.main-blurred.loaded {margin-top: -275px;}
+.main-blurred.afgerond {height: 330px; margin-top: -165px; @include transition (.8s); transition-delay: .12s;}
+.main-blurred.afgerond #blok5 {@include transition (.8s); margin-top: -550px;}
+.main-blurred.afgerond .formulier-afgerond {
+  margin-top: -550px;
+  opacity: 1;
+  visibility: visible;
+  transition-delay: .1s;
+  @include transition (.8s);}
+.main-blurred:before{
+  width: 500px;
+  height: 700px;
+  content:"";
+  position: absolute;
+  top: -100px;
+  left: -50px;
+  bottom: 0;
+  right: 0;
+  background: inherit;
+  box-shadow: inset 0 0 0 350px rgba(255,255,255,0.07);
+  @include filter (blur(25px));
+}
+.main-content {
+  position: absolute;
+  padding: 45px 0px 0 0px;
+  width: 2000px;
+  font-size: 18px;
+  font-weight: 300;
+  color: $color-wit;
+  text-align: center;
+  @include transition (.3s);
+}
+.main-content img {
+  width: 130px;
+  margin-bottom: 20px;
+}
+.main-content h2 {
+  margin: 0 auto;
+  text-transform: uppercase;
+  font-size: 23px;
+  font-weight: 400;
+  letter-spacing: 1.3px;
+}
+.main-content p {margin-top: -12px;}
+.main-content .sub-titel {opacity: 0.6; margin-bottom: 45px;}
+.main-content .tussen-titel {
+  display: inline-block;
+  width: 302px;
+  text-align: left;
+}
+.main-content form {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 550px;
+  overflow: hidden;
+}
+.main-content fieldset {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  float: left;
+  height: 550px;
+  width: 400px;
+  border: 0;
+  @include transition (.3s);
+}
+.hidden {visibility: hidden; opacity: 0;}
+
+.main-content .blok-titel, .main-content-afgerond-content .blok-titel  {
+  display: inline-block;
+  padding: 0 0 6px 0;
+  margin-bottom: 35px;
+  border-bottom: 1px solid $color-wit;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.main-content .input-icon {
+  position: absolute;
+  margin-top: 9px;
+  margin-right: -16px;
+  color: $color-roze;
+}
+.main-content input[type="text"], .main-content input[type="password"], .main-content input[type="number"],
+.main-content input[type="email"], .main-content .input-button {
+  width: 272px;
+  height: 40px;
+  line-height: 40px;
+  padding-left: 30px;
+  background: transparent;
+  color: $color-wit;
+  font-size: 18px;
+  font-weight: 300;
+  font-family: $quicksand;
+  border: none;
+  border-bottom: 2px solid $color-roze;
+  @include transition (.2s);
+  outline: none;
+}
+.main-content .input-button {text-overflow: ellipsis; overflow: hidden;}
+.main-content input[type="text"]:focus, .main-content input[type="password"]:focus,
+.main-content input[type="number"]:focus, .main-content input[type="email"]:focus {
+  border-bottom: 2px solid $color-wit;
+}
+.main-content textarea {
+  margin-top: 12px;
+  width: 272px;
+  height: 56px;
+  line-height: 22px;
+  padding-left: 30px;
+  background: transparent;
+  color: $color-wit;
+  font-size: 18px;
+  font-weight: 300;
+  font-family: $quicksand;
+  border: none;
+  border-bottom: 2px solid $color-roze;
+  @include transition (.2s);
+  outline: none;
+  resize: none;
+}
+.main-content textarea:focus {border-bottom: 2px solid $color-wit;}
+.main-content .input-button {
+  display: inline-block;
+  text-align: left;
+  color: rgba(255,255,255,0.6);
+  cursor: pointer;
+}
+
+.main-content .vorige, .main-content .volgende {margin-top: 8px; width: 145px;}
+.main-content .vorige {
+  margin-right: 2px;
+  background-color: $color-wit;
+  color: $color-zwart;
+}
+.main-content .vorige:hover {background-color: $color-lichtgrijs;}
+.main-content .volgende {margin-left: 2px;}
+.main-content .vorige:only-of-type, .main-content .volgende:only-of-type {margin-left: 0; margin-right: 0;}
+
+#blok1 h2 {margin-top: 5px; margin-bottom: 19px;}
+#blok3 .input-icon {margin-top: 13px;}
+#blok4 .checkboxes {margin-top: -12px;}
+#blok4 .leerling-extra_zorg-text {@include transition (.3s); visibility: hidden; opacity: 0;}
+#blok4 .leerling-extra_zorg-text.visible-input {visibility: visible; opacity: 1;}
+
+/*the container must be positioned relative:*/
+.custom-select {
+  position: relative;
+  margin-top: -12px;
+  margin-bottom: 17px;
+  border-bottom: 2px solid $color-roze;
+  width: 302px !important;
+  margin-left: 49px;
+  text-align: left;
+}
+.custom-select select {display: none;}
+#opleiding-icon {margin-top: 11px;}
+
+/*style the arrow inside the select element:*/
+.select-selected:after {
+  position: absolute;
+  content: "";
+  background-position: right;
+  background-size: contain;
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: $color-wit transparent transparent transparent;
+}
+/*point the arrow upwards when the select box is open (active):*/
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent $color-wit transparent;
+  top: 7px;
+}
+/*style the items (options), including the selected item:*/
+.select-items div, .select-selected {
+  color: $color-wit;
+  padding: 10px 16px;
+  border-bottom: 1px solid $color-roze-hover;
+  cursor: pointer;
+  user-select: none;
+  @include transition (.2s);
+}
+.select-selected:first-of-type {border-bottom: none; padding-left: 30px;}
+.select-items div:last-of-type, .select-selected:last-of-type {border-bottom: none; border-radius: 0 0 3px 3px;}
+/*style items (options):*/
+.select-items {
+  position: absolute;
+  background-color: $color-roze;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  text-align: left;
+  border-radius: 0 0 3px 3px;
+  box-shadow: 0px 0px 14px rgba(0,0,0,0.4);
+}
+/*hide the items when the select box is closed:*/
+.select-hide {display: none;}
+.select-items div:hover, .same-as-selected {
+  background-color: $color-roze-hover;
+}
+
+.opleiding-optie {
+  height: 0;
+  visibility: hidden;
+  opacity: 0;
+  @include transition (.2s);
+}
+.opleiding-optie img {height: 75px; margin-top: 20px; margin-bottom: 5px;}
+.visible {
+  height: auto;
+  visibility: visible;
+  opacity: 1;
+}
+#opleiding-empty {padding: 30px 0 10px 0;}
+#opleiding-empty.removed {padding: 0; visibility: hidden;}
+#opleiding-empty img {height: 100px; margin-top: 60px; margin-bottom: 5px;}
+#opleiding-2-input .tussen-titel, #opleiding-3-input .tussen-titel, #opleiding-5-input .tussen-titel  {text-align: center;}
+#opleiding-3-input {margin-top: 12px;}
+#opleiding-4-input {margin-top: -3px;}
+
+.checkboxes {
+  margin: 5px 0 20px 49px;
+  width: 302px;
+  font-size: 0;
+}
+.checkboxes:first-of-type {margin: 15px 0 16px 49px;}
+.checkboxes-helft {
+  display: inline-block;
+  margin: 0;
+  margin-top: 1px;
+  width: 50%;
+  font-size: 0;
+  vertical-align: middle;
+}
+.checkboxes-helft .tussen-titel {font-size: 18px;}
+.checkboxes-helft .checkbox {margin-top: 0; width: 39px;}
+.checkboxes-helft .checkbox:first-of-type {margin-left: 2px;}
+
+.checkboxes-2-3, .checkboxes-1-3 {
+  display: inline-block;
+  margin: 0;
+  margin-top: 5px;
+  font-size: 0;
+  vertical-align: middle;
+}
+.checkboxes-2-3 {width: 65%;}
+.checkboxes-2-3 .tussen-titel {font-size: 18px;}
+.checkboxes-1-3 {width: 35%;}
+.checkboxes-1-3 .checkbox {
+  margin-top: 0;
+  margin-right: 5px;
+  padding: 0 0 0 22px;
+  width: auto;
+}
+.checkboxes-1-3 .checkbox:first-of-type {margin-left: 2px;}
+.checkboxes-1-3 .checkbox:last-of-type {margin-right: 0px;}
+.checkboxes-1-3 .checkbox:nth-child(odd) {margin-right: 5px;}
+.checkboxes-soort {margin-top: -12px !important;}
+.checkboxes-1-3 .checkbox-soort {
+  display: inline-block;
+  position: relative;
+  width: 22px;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-right: 5px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 18px;
+  text-align: center;
+}
+.checkboxes-1-3 .checkbox-soort:last-of-type {margin-right: 0px;}
+
+.checkboxes-6-10, .checkboxes-4-10 {
+  display: inline-block;
+  margin: 0;
+  margin-top: 5px;
+  font-size: 0;
+  vertical-align: middle;
+}
+.checkboxes-6-10 {width: 56%;}
+.checkboxes-6-10 .tussen-titel {font-size: 18px;}
+.checkboxes-4-10 {width: 44%;}
+.checkboxes-4-10 .checkbox {
+  margin-top: 0;
+  margin-right: 5px;
+  padding: 0 0 0 32px;
+  width: auto;
+}
+.checkboxes-4-10 .checkbox:last-of-type {margin-right: 0px;}
+.checkboxes-4-10 .checkbox:nth-child(odd) {margin-right: 14px;}
+.checkbox-decaan_mentor {width: 41%;}
+.checkbox-decaan_mentor:last-of-type {width: 59%;}
+
+input[type="radio"] {
+  -webkit-appearance: checkbox;
+  -moz-appearance: checkbox;
+  -ms-appearance: checkbox;
+  appearance: checkbox;
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+.checkbox {
+  display: inline-block;
+  position: relative;
+  padding: 0 0 0 32px;
+  margin-top: 5px;
+  margin-bottom: 0;
+  height: 30px;
+  width: 116px;
+  line-height: 30px;
+  text-align: left;
+  border-radius: 3px;
+  font-size: 18px;
+  @include transition(.2s);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+}
+.checkbox:nth-child(odd) {margin-right: 6px;}
+.checkbox input {position: absolute;opacity: 0;}
+.checkmark {
+  position: absolute;
+  top: 4px;
+  left: 0;
+  height: 22px;
+  width: 22px;
+  background: rgba(255,255,255,0.25);
+  border-radius: 3px;
+  @include transition(.2s);
+}
+.checkbox input:checked ~ .checkmark {background-color: $color-roze;}
+.checkbox input:checked + .home-content {background-color: $color-roze;}
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.checkbox input:checked ~ .checkmark:after {display: block;}
+.checkbox .checkmark:after {
+  left: 7px;
+  top: 3px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.checkbox-input {
+  margin-left: -22px;
+  position: absolute;
+  padding: 0;
+  width: 22px;
+  z-index: 99;
+}
+.checkbox-info {
+  position: absolute;
+  margin: 0;
+  left: 49px;
+  margin-top: -70px;
+  padding: 15px 20px;
+  background-color: $color-wit;
+  color: $color-grijs;
+  border-radius: 3px;
+  box-shadow: 0px 0px 14px rgba(0,0,0,0.4);
+  font-size: 16px;
+  z-index: 98;
+  visibility: hidden;
+  opacity: 0;
+}
+.checkbox-input:hover > .checkbox-info {visibility: visible; opacity: 1;}
+.checkbox-info p {
+  margin: 0;
+  padding: 0;
+  line-height: 22px;
+}
+
+
+// Google maps
+.show-map {margin-bottom: 12px;}
+.main-content.maps {padding: 0;}
+#map {
+  top: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 100;
+  @include transition(.3s);
+}
+#map.map-visible {visibility: visible; opacity: 1;}
+#map-zoeken {
+  position: absolute;
+  top: 43px !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: auto !important;
+  margin: 0 auto;
+  padding: 0 40px 0 20px;
+  height: 40px;
+  width: 70% !important;
+  background: #fff;
+  color: #000;
+  box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+  border: none;
+  border-radius: 20px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 40px;
+  text-overflow: ellipsis;
+  z-index: 102;
+  @include transition (.2s);
+}
+#map-zoeken:focus {box-shadow: 0px 5px 10px rgba(0,0,0,0.3);}
+#map-zoeken::placeholder {color: $color-grijs; opacity: 0.6;}
+#map-zoeken:-ms-input-placeholder {color: $color-grijs; opacity: 0.6;}
+#map-zoeken::-ms-input-placeholder {color: $color-grijs; opacity: 0.6;}
+
+.hide-map {
+  position: absolute;
+  top: 48px;
+  right: calc(11% - 9px);
+  z-index: 103;
+  height: 30px;
+  width: 30px;
+  line-height: 29px;
+  text-align: center;
+  background: none;
+  border: none;
+  border-radius: 17px;
+  visibility: hidden;
+  opacity: 0;
+  @include transition(.3s);
+  cursor: pointer;
+  outline: none;
+}
+.hide-map:hover {background: rgba(0,0,0,0.1);}
+.hide-map.map-visible {visibility: visible; opacity: 1;}
+.submit-map {
+  display: block;
+  position: absolute;
+  bottom: 38px;
+  left: 15%;
+  margin: 0 auto;
+  padding: 0;
+  height: 40px;
+  width: 70%;
+  line-height: 40px;
+  background-color: $color-roze;
+  color: $color-wit;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
+  font-size: 18px;
+  font-weight: 300;
+  font-family: $quicksand;
+  border: none;
+  border-radius: 3px;
+  @include transition (.2s);
+  text-decoration: none;
+  z-index: 103;
+  opacity: 0;
+  visibility: hidden;
+  outline: none;
+  cursor: pointer;
+}
+.submit-map.map-visible {opacity: 1; visibility: visible;}
+.submit-map:hover {background-color: $color-roze-hover;}
+
+.pac-container {
+  margin-top: 15px;
+  background-color: $color-wit;
+  position: absolute !important;
+  z-index: 1000;
+  border-radius: 3px;
+  border-top: none;
+  font-family: $quicksand;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow: hidden;
+  @include transition (.2s);
+  cursor: pointer;
+}
+.pac-container.pac-logo::after {display: none;}
+.buttons.map-visible {visibility: hidden; opacity: 0; @include transition (.3s);}
+
+
+// STAPPEN INDICATIE
+.main-indicatie {
+  position: absolute;
+  width: 400px;
+  top: 50%;
+  left: 50%;
+  margin-top: 300px;
+  margin-left: -200px;
+  color: $color-roze;
+  font-size: 0px;
+  visibility: hidden;
+  opacity: 0;
+  @include transition (.5s);
+  transition-delay: .5s;
+}
+.main-indicatie.loaded{visibility: visible; opacity: 1;}
+.main-indicatie-getal {
+  display: inline-block;
+  position: relative;
+  padding: 0;
+  margin: 0 0 0 calc(25% - 7px);
+  height: 30px;
+  width: 30px;
+  background-color: $color-lichtgrijs;
+  color: $color-donkergrijs;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 30px;
+  font-size: 18px;
+  font-weight: 500;
+  z-index: 100;
+  @include transition (.3s);
+}
+.active {background-color: $color-roze; color: $color-wit;}
+.main-indicatie-getal:first-of-type {margin: 0;}
+.main-indicatie-lijn {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  margin-top: -19px;
+  margin-left: 15px;
+  width: calc(100% - 30px);
+  height: 8px;
+  background: rgba(255,255,255,0.07);
+  box-shadow: 0px 0px 14px rgba(0,0,0,0.4);
+  text-align: center;
+  @include transition (.3s);
+
+}
+.main-indicatie-lijn-voortgang {
+  display: block;
+  position: absolute;
+  margin-left: -400px;
+  width: 400px;
+  height: 100%;
+  background-color: $color-roze;
+  @include transition (.3s);
+}
+.main-indicatie-lijn.eind {
+  margin: -30px 0 0 0;
+  height: 30px;
+  width: 100%;
+  color: $color-wit;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 30px;
+  border-radius: 40px;
+  z-index: 101;
+}
+
+
+//FORMULIER AFGEROND
+.formulier-afgerond {margin-left: 1600px; opacity: 0; visibility: hidden;}
+.formulier-afgerond img {height: 75px; margin-bottom: 15px;}
+.formulier-afgerond-terug {
+  display: inline-block;
+  color: $color-wit;
+  margin-top: 13px;
+  opacity: 0.6;
+  cursor: pointer;
+  @include transition (.3s);
+}
+.formulier-afgerond-terug:hover {opacity: 1;}
+
+
+//VOORBEELD PDF
+.container {visibility: hidden; opacity: 0; transition-delay: 1s;}
+.container.visible {visibility: visible; opacity: 1; transition-delay: 0s;}
+.pdf-voorbeeld-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0,0,0,0.7);
+  color: $color-wit;
+  opacity: 0;
+  visibility: hidden;
+  @include transition (.5s);
+  transition-delay: .3s;
+  z-index: 997;
+}
+.pdf-voorbeeld-overlay.visible {transition-delay: 0s; opacity: 1; visibility: visible;}
+.pdf-voorbeeld-overlay-content {
+  position: relative;
+  padding: 45px 50px;
+  top: 0;
+  max-height: calc(100vh - 350px);
+  width: calc(100% - 100px);
+  opacity: 0;
+  visibility: hidden;
+  background-color: $color-wit;
+  color: $color-zwart;
+  box-shadow: 0px 0px 14px rgba(0,0,0,0.4);
+  font-size: 0;
+  overflow-y: auto;
+  transition-delay: .3s;
+  @include transition (.5s);
+  z-index: 9999;
+}
+.pdf-voorbeeld-overlay-content.visible {
+  top: 150px;
+  opacity: 1;
+  visibility: visible;
+  transition-delay: .3s;
+}
+.pdf-voorbeeld-overlay-content * {padding-left: 0 !important; padding-right: 0 !important;}
+.pdf-voorbeeld-overlay-buttons {
+  position: relative;
+  top: 150px;
+  margin-left: -70px;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+  @include transition (1s);
+  transition-delay: 0s;
+}
+.pdf-voorbeeld-overlay-buttons.visible {
+  margin-left: -15px;
+  opacity: 1;
+  visibility: visible;
+  transition-delay: .5s;
+}
+
+.pdf-voorbeeld-overlay-button {
+  position: relative;
+  display: block;
+  padding: 0;
+  height: 40px;
+  width: 39px;
+  line-height: 40px;
+  background-color: $color-roze;
+  color: $color-wit;
+  font-size: 20px;
+  text-align: center;
+  cursor: pointer;
+  @include transition (.3s);
+}
+.pdf-voorbeeld-overlay-button:hover {background-color: $color-roze-hover;}
+.pdf-overlay-sluiten {margin-bottom: 13px;}
+
+.tekst-inline {display: inline; font-size: 15px;}
+.tekst-inline h2 {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+.tekst-roze {color: $color-roze; font-size: 15px;}
+.img-responsive {width: 100%; height: auto; margin-bottom: 20px;}
+
+.pdf-divider {
+  margin: 35px 0 30px -15px;
+  width: calc(100% + 30px);
+  height: 12px;
+  text-align: center;
+  border-bottom: 1px solid $color-roze;
+}
+.pdf-divider h2 {
+  margin: 0;
+  padding: 0 18px !important;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: $color-roze;
+  background-color: $color-wit;
+}
+.pdf-blok {
+  margin: 5px 0;
+  height: 40px;
+  padding: 0 13px !important;
+  line-height: 40px;
+  border-radius: 3px;
+  font-size: 15px;
+}
+.pdf-blok-grijs {background-color: $color-lichtgrijs; border: 1px solid $color-lichtgrijs;}
+.pdf-blok-wit {background-color: $color-wit; border: 1px solid $color-lichtgrijs;}
+.col-4 .pdf-blok-grijs, .col-5 .pdf-blok-grijs {border-radius: 3px 0 0 3px;}
+.col-7 .pdf-blok-wit, .col-8 .pdf-blok-wit {border-radius: 0 3px 3px 0;}
+.pdf-blok .pdf-icon {
+  display: inline-block;
+  width: 23px;
+  color: $color-zwart;
+}
+
+.hidden-pdf {
+  position: fixed;
+  bottom: 0;
+  left: 150vw;
+  width: 100%;
+}
+#PDF-document {
+  position: relative;
+  padding: 0px 50px;
+  left: 25px;
+  top: 0px;
+  width: 100%;
+  background-color: $color-wit;
+  font-size: 16px;
+}
+#PDF-document .ma-logo-pdf {float: right; height: 75px;}
+#PDF-document p {margin: 0; padding: 0; line-height: 25px;}
+#PDF-document .tekst-roze {margin-bottom: 20px; display: block;}
+#PDF-document .tekst-roze-h2 {text-align: center;}
+#PDF-document .tekst-roze-h2 h2 {
+  margin: 0;
+  padding: 8px 0 !important;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 2.2px;
+  text-transform: uppercase;
+  color: $color-roze;
+  border-bottom: 1px solid $color-roze;
+}
+
+
+//FOOTER
+#copyright {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  color: #ABAFB8;
+}
+#copyright a {
+  color: #ABAFB8;
+  text-decoration: none;
+  @include transition (.2s);
+  outline: none;
+}
+#copyright a:hover {color: $color-roze;}
+
+
+//MEDIAQUERIES
+@media (max-width: 767px) {
+  .main-blurred {margin-top: -200vh; transform: scale(0.8);}
+  .main-blurred.loaded {margin-top: -300px;}
+  .main-blurred.afgerond {margin-top: -165px;}
+  .main-blurred:before{
+    position: absolute;
+    background: $color-wit;
+    overflow: auto;
+    box-shadow: none;
+    @include filter (blur(0px));
+  }
+  .main-content {color: $color-zwart;}
+  .main-indicatie{margin-top: 215px; transform: scale(0.8);}
+  .main-content input[type="text"], .main-content input[type="password"], .main-content input[type="number"],
+  .main-content input[type="email"], .main-content .input-button, .main-content textarea {color: $color-zwart;}
+  .main-content input[type="text"]:focus, .main-content input[type="password"]:focus,
+  .main-content input[type="number"]:focus, .main-content input[type="email"]:focus, .main-content textarea:focus {border-bottom: 2px solid $color-zwart;}
+  .main-content .input-button {color: rgba(0,0,0,0.6) !important;}
+  .select-selected {color: $color-zwart !important;}
+  .checkmark {background: rgba(0,0,0,0.25);}
+  .xs-visible {display: inline;}
+  .formulier-afgerond-terug {color: $color-zwartgrijs;}
+  .container {display: none;}
+  #copyright, #copyright a {color: $color-wit; font-size: 14px;}
+  .main-content .vorige {background-color: $color-zwartgrijs !important; color: $color-wit !important;}
+  .button-afgerond.wit {display: none;}
+  .button-afgerond.roze {border-radius: 3px !important;}
+  ::placeholder {color: $color-zwartgrijs;}
+  :-ms-input-placeholder {color: $color-zwartgrijs;}
+  ::-ms-input-placeholder {color: $color-zwartgrijs;}
+}
+
+@media (min-width: 768px) {
+  .xs-visible {display: none;}
+  .button-afgerond.wit {display: inline-block;}
+  ::placeholder {color: $color-wit;}
+  :-ms-input-placeholder {color: $color-wit;}
+  ::-ms-input-placeholder {color: $color-wit;}
+}
+
+
+// STANDAARD ELEMENTEN
+.uppercase {text-transform: uppercase;}
+.buttons {
+  position: absolute;
+  width: 100%;
+  bottom: 72px;
+}
+.button {
+  display: inline-block;
+  margin: 0;
+  padding: 0 20px;
+  height: 40px;
+  line-height: 40px;
+  background-color: $color-roze;
+  color: $color-wit;
+  font-size: 18px;
+  font-weight: 300;
+  font-family: $quicksand;
+  border: none;
+  border-radius: 3px;
+  @include transition (.2s);
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+}
+.button:hover {background-color: $color-roze-hover;}
+.button .svg-inline--fa {font-size: 14px; margin-top: -10px !important;}
+
+.buttons-afgerond {font-size: 0px;}
+.button-afgerond {
+  display: inline-block;
+  margin: 0;
+  padding: 0 20px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 18px;
+  font-weight: 300;
+  font-family: $quicksand;
+  border: none;
+  border-radius: 3px 0 0 3px;
+  @include transition (.2s);
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+}
+.button-afgerond.wit {background-color: $color-wit; color: $color-zwart; border-radius: 3px 0 0 3px;}
+.button-afgerond.roze {background-color: $color-roze; color: $color-wit; border-radius: 0 3px 3px 0;}
+.button-afgerond.wit:hover {background-color: $color-lichtgrijs;}
+.button-afgerond.roze:hover {background-color: $color-roze-hover;}
+
+.link {
+  color: $color-roze;
+  text-decoration: none;
+  @include transition (.2s);
+}
+.link:hover {text-decoration: underline;}
+
+
+// SCROLLBAR -------------------------------------------------------------------
+::-webkit-scrollbar {width: 6px; height: 12px;}
+::-webkit-scrollbar-track {background: rgba(255,255,255,0.25);}
+::-webkit-scrollbar-thumb {background: $color-roze;}
+
+
+// TEXT SELECTION KLEUR --------------------------------------------------------
+::selection {background: $color-roze; color: $color-wit;}
+::-moz-selection {background: $color-roze; color: $color-wit;}
+
+
+// PLACEHOLDER -----------------------------------------------------------------
+::placeholder {opacity: 0.6;}
+:-ms-input-placeholder {opacity: 0.6;}
+::-ms-input-placeholder {opacity: 0.6;}
