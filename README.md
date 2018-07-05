@@ -14,6 +14,7 @@ Deze opdracht is gericht op toekomstige leerlingen van het Mediacollege Amsterda
 -	Javascipt en jQuery.
 -	HTML(5).
 - PHP.
+- AJAX (Submit form zonder refresh).
 
 Ik weet zeker dat ik alle nodige kennis al in huis heb voor de desbetreffende opdracht. Misschien nog een paar dingen bijleren, maar dat komt wel goed.
 
